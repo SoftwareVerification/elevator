@@ -5,7 +5,7 @@ MODULE Button()
 	VAR
 		pressed: boolean;
 	ASSIGN
-		init(pressed) := false;
+		init(pressed) := FALSE;
 
 MODULE Elevator()
 	VAR
