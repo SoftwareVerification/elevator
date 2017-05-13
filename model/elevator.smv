@@ -7,4 +7,10 @@ MODULE Button()
 	ASSIGN
 		init(pressed) := false;
 
+MODULE Elevator()
+	VAR
+		floor: 0..3;
+	ASSIGN
+		init(floor) := 3;
+
 MODULE main
