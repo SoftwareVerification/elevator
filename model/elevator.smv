@@ -14,3 +14,9 @@ MODULE Elevator()
 		init(floor) := 3;
 
 MODULE main
+	VAR
+		elevator: Elevator();
+		button0: Button();
+		button1: Button();
+		button2: Button();
+		button3: Button();
