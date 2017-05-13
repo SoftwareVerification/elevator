@@ -1,4 +1,10 @@
 -- author: Hendrik Werner s4549775
 -- NuSMV model of an elevator.
 
+MODULE Button()
+	VAR
+		pressed: boolean;
+	ASSIGN
+		init(pressed) := false;
+
 MODULE main
