@@ -9,9 +9,9 @@ MODULE Button()
 
 MODULE Light()
 	VAR
-		on: boolean;
+		active: boolean;
 	ASSIGN
-		init(on) := FALSE;
+		init(active) := FALSE;
 
 MODULE Door()
 	VAR
