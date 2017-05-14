@@ -30,6 +30,10 @@ MODULE Elevator()
 MODULE main
 	VAR
 		elevator: Elevator();
+		door0: Door();
+		door1: Door();
+		door2: Door();
+		door3: Door();
 		button0: Button();
 		button1: Button();
 		button2: Button();
