@@ -34,6 +34,10 @@ MODULE main
 		button1: Button();
 		button2: Button();
 		button3: Button();
+		light0: Light(button0);
+		light1: Light(button1);
+		light2: Light(button2);
+		light3: Light(button3);
 
 	-- Every floor is visited infinitely often
 	LTLSPEC G F elevator.floor = 0 -- specification 4
