@@ -7,6 +7,12 @@ MODULE Button()
 	ASSIGN
 		init(pressed) := FALSE;
 
+MODULE Light()
+	VAR
+		on: boolean;
+	ASSIGN
+		init(on) := FALSE;
+
 MODULE Door()
 	VAR
 		open: boolean;
