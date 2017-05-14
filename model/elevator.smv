@@ -7,6 +7,12 @@ MODULE Button()
 	ASSIGN
 		init(pressed) := FALSE;
 
+MODULE Door()
+	VAR
+		open: boolean;
+	ASSIGN
+		init(open) := FALSE;
+
 MODULE Elevator()
 	VAR
 		floor: 0..3;
