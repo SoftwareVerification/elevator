@@ -7,11 +7,12 @@ MODULE Button()
 	ASSIGN
 		init(pressed) := FALSE;
 
-MODULE Light()
+MODULE Light(button)
 	VAR
 		active: boolean;
 	ASSIGN
 		init(active) := FALSE;
+	INVAR button.pressed <-> active
 
 MODULE Door()
 	VAR
