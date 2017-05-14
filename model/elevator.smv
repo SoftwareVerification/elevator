@@ -51,10 +51,6 @@ MODULE main
 		light3: Light(button3);
 
 	-- Every floor is visited infinitely often
-	LTLSPEC G F elevator.floor = 0 -- specification 4
-	LTLSPEC G F elevator.floor = 1
-	LTLSPEC G F elevator.floor = 2
-	LTLSPEC G F elevator.floor = 3
 	CTLSPEC AG EF elevator.floor = 0
 	CTLSPEC AG EF elevator.floor = 1
 	CTLSPEC AG EF elevator.floor = 2
