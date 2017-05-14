@@ -9,10 +9,7 @@ MODULE Button(door)
 		init(pressed) := FALSE;
 		init(active) := FALSE;
 		next(pressed) := {TRUE, FALSE};
-		next(active) := case
-			door.open: FALSE;
-			!door.open: active | pressed;
-		esac;
+		next(active) := door.open ? FALSE : active | pressed;
 
 MODULE Light(button)
 	VAR
