@@ -79,6 +79,12 @@ MODULE main
 	CTLSPEC AG EF elevator.floor = 2
 	CTLSPEC AG EF elevator.floor = 3
 
+	-- It is possible to go from any floor to any other floor (specification 3)
+	LTLSPEC G (button0.pressed -> F door0.open)
+	LTLSPEC G (button1.pressed -> F door1.open)
+	LTLSPEC G (button2.pressed -> F door2.open)
+	LTLSPEC G (button3.pressed -> F door3.open)
+
 	-- Lights are correct (specification 6)
 	LTLSPEC G (light0.active -> F door0.open)
 	LTLSPEC G (light1.active -> F door1.open)
