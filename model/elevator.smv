@@ -80,10 +80,10 @@ MODULE main
 	CTLSPEC AG EF elevator.floor = 3
 
 	-- The doors can be opened infinitely often
-	CTLSPEC AF EF door0.open
-	CTLSPEC AF EF door1.open
-	CTLSPEC AF EF door2.open
-	CTLSPEC AF EF door3.open
+	CTLSPEC AG EF door0.open
+	CTLSPEC AG EF door1.open
+	CTLSPEC AG EF door2.open
+	CTLSPEC AG EF door3.open
 
 	-- It is possible to go from any floor to any other floor (specification 3)
 	LTLSPEC G (button0.pressed -> F door0.open)
