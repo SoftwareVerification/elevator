@@ -123,3 +123,11 @@ MODULE main
 	CTLSPEC AG (door1.open -> elevator.floor = 1)
 	CTLSPEC AG (door2.open -> elevator.floor = 2)
 	CTLSPEC AG (door3.open -> elevator.floor = 3)
+
+	-- Top floor gets priority, it is served before any other floor when
+	-- requested (specification 5) (I chose not to use this.)
+	-- LTLSPEC G (
+	-- 	button3.active -> !(
+	-- 		door0.open | door1.open | door2.open
+	-- 	) U door3.open
+	-- )
