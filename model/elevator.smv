@@ -82,6 +82,12 @@ MODULE main
 	CTLSPEC AG EF elevator.floor = 2
 	CTLSPEC AG EF elevator.floor = 3
 
+	-- Lights are correct (specification 6)
+	LTLSPEC G (light0.active -> F door0.open)
+	LTLSPEC G (light1.active -> F door1.open)
+	LTLSPEC G (light2.active -> F door2.open)
+	LTLSPEC G (light3.active -> F door3.open)
+
 	-- Lights are on iff the corresponding button is pressed
 	LTLSPEC G (button0.active <-> light0.active)
 	LTLSPEC G (button1.active <-> light1.active)
