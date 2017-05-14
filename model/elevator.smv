@@ -104,3 +104,9 @@ MODULE main
 	LTLSPEC G (button1.active -> button1.active U door1.open)
 	LTLSPEC G (button2.active -> button2.active U door2.open)
 	LTLSPEC G (button3.active -> button3.active U door3.open)
+
+	-- Doors only open when the elevator is on their floor (specification 1)
+	CTLSPEC AG (door0.open -> elevator.floor = 0)
+	CTLSPEC AG (door1.open -> elevator.floor = 1)
+	CTLSPEC AG (door2.open -> elevator.floor = 2)
+	CTLSPEC AG (door3.open -> elevator.floor = 3)
