@@ -41,6 +41,16 @@
 	$\square (button3.active \rightarrow button3.active \cup door3.open)$
 	\item %3
 	It is possible for a user to go from any floor to any other floor.
+
+	The user can only press buttons and walk through open doors. By proving that when a button is pressed the corresponding door will eventually open we prove that the user can get in from any floor, and that the user can get out on any floor. This proves the property.
+
+	$\square (button0.pressed \rightarrow \diamond door0.open)$
+
+	$\square (button1.pressed \rightarrow \diamond door1.open)$
+
+	$\square (button2.pressed \rightarrow \diamond door2.open)$
+
+	$\square (button3.pressed \rightarrow \diamond door3.open)$
 	\item %4
 	Again and again the elevator returns to floor 0.
 
