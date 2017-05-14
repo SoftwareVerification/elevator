@@ -15,15 +15,21 @@
 \section{Formal Specifications}
 \begin{enumerate}
 	\item %1
+	Doors should not open if the elevator is not present.
 	\item %2
+	A requested floor will be served sometime.
 	\item %3
+	A requested floor will be served sometime.
 	\item %4
 	Again and again the elevator returns to floor 0.
 
 	$\square \diamond elevator.floor = 0$
 	\item %5
+	The top-floor gets priority: when it is requested, the elevator serves it immediately, before other floors.
 	\item %6
+	The indicator lights are correct: they are on if, and only if, the elevator goes to that floor.
 	\item %7
+	If there is no request, the elevator does not move.
 \end{enumerate}
 
 \end{document}
