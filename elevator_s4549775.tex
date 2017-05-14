@@ -28,6 +28,16 @@
 	The top-floor gets priority: when it is requested, the elevator serves it immediately, before other floors.
 	\item %6
 	The indicator lights are correct: they are on if, and only if, the elevator goes to that floor.
+
+	I assume that by "goes to that floor" it is meant that the floor is served, meaning the door is opened. Otherwise this does not make much sense, and the elevator could just cycle between floors without ever picking anybody up.
+
+	$\square (light0.active \rightarrow \diamond door0.open)$
+
+	$\square (light1.active \rightarrow \diamond door1.open)$
+
+	$\square (light2.active \rightarrow \diamond door2.open)$
+
+	$\square (light3.active \rightarrow \diamond door3.open)$
 	\item %7
 	If there is no request, the elevator does not move.
 \end{enumerate}
