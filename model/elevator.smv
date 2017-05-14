@@ -40,6 +40,19 @@ MODULE Elevator(button0, button1, button2, button3)
 			TRUE: floor;
 		esac;
 
+MODULE DoorController(
+		elevator,
+		door0, button0,
+		door1, button1,
+		door2, button2,
+		door3, button3
+	)
+	INVAR door0.open <-> elevator.floor = 0 & button0.active;
+	INVAR door1.open <-> elevator.floor = 1 & button1.active;
+	INVAR door2.open <-> elevator.floor = 2 & button2.active;
+	INVAR door3.open <-> elevator.floor = 3 & button3.active;
+
+
 MODULE main
 	VAR
 		door0: Door();
@@ -51,6 +64,13 @@ MODULE main
 		button2: Button(door2);
 		button3: Button(door3);
 		elevator: Elevator(button0, button1, button2, button3);
+		doorController: DoorController(
+			elevator,
+			door0, button0,
+			door1, button1,
+			door2, button2,
+			door3, button3
+		);
 		light0: Light(button0);
 		light1: Light(button1);
 		light2: Light(button2);
