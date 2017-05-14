@@ -12,6 +12,7 @@ MODULE Elevator()
 		floor: 0..3;
 	ASSIGN
 		init(floor) := 3;
+		next(floor) := (floor + 1) mod 4;
 
 MODULE main
 	VAR
