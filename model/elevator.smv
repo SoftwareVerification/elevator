@@ -1,7 +1,7 @@
 -- author: Hendrik Werner s4549775
 -- NuSMV model of an elevator.
 
-MODULE Button()
+MODULE Button(door)
 	VAR
 		pressed: boolean;
 		active: boolean;
@@ -38,10 +38,10 @@ MODULE main
 		door1: Door();
 		door2: Door();
 		door3: Door();
-		button0: Button();
-		button1: Button();
-		button2: Button();
-		button3: Button();
+		button0: Button(door0);
+		button1: Button(door1);
+		button2: Button(door2);
+		button3: Button(door3);
 		light0: Light(button0);
 		light1: Light(button1);
 		light2: Light(button2);
