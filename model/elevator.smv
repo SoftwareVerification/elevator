@@ -97,3 +97,10 @@ MODULE main
 	CTLSPEC AG (button1.active <-> light1.active)
 	CTLSPEC AG (button2.active <-> light2.active)
 	CTLSPEC AG (button3.active <-> light3.active)
+
+	-- Once a button is activated the button stays activated until the floor was
+	-- served by the elevator.
+	LTLSPEC G (button0.active -> button0.active U door0.open)
+	LTLSPEC G (button1.active -> button1.active U door1.open)
+	LTLSPEC G (button2.active -> button2.active U door2.open)
+	LTLSPEC G (button3.active -> button3.active U door3.open)
