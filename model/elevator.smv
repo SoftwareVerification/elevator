@@ -27,16 +27,21 @@ MODULE Door()
 	ASSIGN
 		init(open) := FALSE;
 
-MODULE Elevator()
+MODULE Elevator(button0, button1, button2, button3)
 	VAR
 		floor: 0..3;
 	ASSIGN
 		init(floor) := 3;
-		next(floor) := (floor + 1) mod 4;
+		next(floor) := case
+			button0.active |
+			button1.active |
+			button2.active |
+			button3.active: (floor + 1) mod 4;
+			TRUE: floor;
+		esac;
 
 MODULE main
 	VAR
-		elevator: Elevator();
 		door0: Door();
 		door1: Door();
 		door2: Door();
@@ -45,6 +50,7 @@ MODULE main
 		button1: Button(door1);
 		button2: Button(door2);
 		button3: Button(door3);
+		elevator: Elevator(button0, button1, button2, button3);
 		light0: Light(button0);
 		light1: Light(button1);
 		light2: Light(button2);
