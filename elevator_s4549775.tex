@@ -31,6 +31,14 @@
 	$\square (door3.open \rightarrow elevator.floor = 3)$
 	\item %2
 	A requested floor will be served sometime.
+
+	$\square (button0.active \rightarrow button0.active \cup door0.open)$
+
+	$\square (button1.active \rightarrow button1.active \cup door1.open)$
+
+	$\square (button2.active \rightarrow button2.active \cup door2.open)$
+
+	$\square (button3.active \rightarrow button3.active \cup door3.open)$
 	\item %3
 	It is possible for a user to go from any floor to any other floor.
 	\item %4
