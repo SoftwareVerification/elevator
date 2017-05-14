@@ -21,3 +21,9 @@ MODULE main
 		button1: Button();
 		button2: Button();
 		button3: Button();
+
+	-- Every floor is visited infinitely often
+	LTLSPEC G F elevator.floor = 0
+	LTLSPEC G F elevator.floor = 1
+	LTLSPEC G F elevator.floor = 2
+	LTLSPEC G F elevator.floor = 3
