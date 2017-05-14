@@ -76,7 +76,7 @@ MODULE main
 		light2: Light(button2);
 		light3: Light(button3);
 
-	-- Every floor is visited infinitely often
+	-- Every floor can be visited at all times
 	CTLSPEC AG EF elevator.floor = 0
 	CTLSPEC AG EF elevator.floor = 1
 	CTLSPEC AG EF elevator.floor = 2
