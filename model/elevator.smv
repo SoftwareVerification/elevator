@@ -4,15 +4,19 @@
 MODULE Button()
 	VAR
 		pressed: boolean;
+		active: boolean;
 	ASSIGN
 		init(pressed) := FALSE;
+		init(active) := FALSE;
+		next(pressed) := {TRUE, FALSE};
+		next(active) := active | pressed;
 
 MODULE Light(button)
 	VAR
 		active: boolean;
 	ASSIGN
 		init(active) := FALSE;
-	INVAR button.pressed <-> active
+	INVAR button.active <-> active
 
 MODULE Door()
 	VAR
@@ -54,11 +58,11 @@ MODULE main
 	CTLSPEC AG EF elevator.floor = 3
 
 	-- Lights are on iff the corresponding button is pressed
-	LTLSPEC G (button0.pressed <-> light0.active)
-	LTLSPEC G (button1.pressed <-> light1.active)
-	LTLSPEC G (button2.pressed <-> light2.active)
-	LTLSPEC G (button3.pressed <-> light3.active)
-	CTLSPEC AG (button0.pressed <-> light0.active)
-	CTLSPEC AG (button1.pressed <-> light1.active)
-	CTLSPEC AG (button2.pressed <-> light2.active)
-	CTLSPEC AG (button3.pressed <-> light3.active)
+	LTLSPEC G (button0.active <-> light0.active)
+	LTLSPEC G (button1.active <-> light1.active)
+	LTLSPEC G (button2.active <-> light2.active)
+	LTLSPEC G (button3.active <-> light3.active)
+	CTLSPEC AG (button0.active <-> light0.active)
+	CTLSPEC AG (button1.active <-> light1.active)
+	CTLSPEC AG (button2.active <-> light2.active)
+	CTLSPEC AG (button3.active <-> light3.active)
