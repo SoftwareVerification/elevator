@@ -92,6 +92,10 @@ MODULE Button(door)
 
 This does not seem possible in NuSMV because the modules cannot be instantiated. If one can make this work, I could not find out how from the documentation I had. To solve this problem I had to introduce a door controller module that opens and closes the doors.
 
+Property 4 contradicts property 7 because there are paths where no button is pressed, so according to property 7 the elevator shouldn't move, but according to property 4 it should.
+
+I chose to exclude property 4 because we already verify that we can get from any floor to any other floor, and that all requested floors are served. I think property 4 does not add anything useful, but through property 7 we can preserve energy.
+
 \section{Reflection}
 \subsection{Division of Tasks}
 Unfortunately I did not find a partner for this exercise. I wanted to ask if anybody else was looking for a partner at the most recent werkcollege on Friday, but I was the only one attending.
