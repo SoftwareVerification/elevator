@@ -84,6 +84,15 @@
 		(elevator.floor = 3 \rightarrow \bigcirc elevator.floor = 3))$
 \end{enumerate}
 
+In the model I verified a lot of additional properties. For example that there is no situation in which some door cannot be opened anymore:
+
+$\forall \square \exists \diamond door0.open$\\
+$\forall \square \exists \diamond door1.open$\\
+$\forall \square \exists \diamond door2.open$\\
+$\forall \square \exists \diamond door3.open$
+
+For these specifications look at $elevator.smv$.
+
 \section{Report}
 It was not explicitly mentioned anywhere but I assumed that all buttons are just randomly pressed. Also it is described in the assignment that there are buttons inside and outside of the elevator, but I modeled them as a single entity. It would be trivial to have $button01$, $button02$ for floor 0 and so on, one inside the elevator and one on floor 0. This would however not not add anything to the model. If we physically built this model, we could just connect both of them to the same wire.
 
