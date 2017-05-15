@@ -104,6 +104,24 @@ Property 4 contradicts property 7 because there are paths where no button is pre
 
 I chose to exclude property 4 because we already verify that we can get from any floor to any other floor, and that all requested floors are served. I think property 4 does not add anything useful, but through property 7 we can preserve energy.
 
+If I want to implement property 5, the door controller look like this:
+
+\begin{lstlisting}[basicstyle=\small]
+MODULE DoorController(
+		elevator,
+		door0, button0,
+		door1, button1,
+		door2, button2,
+		door3, button3
+	)
+	INVAR door0.open <-> elevator.floor = 0 & button0.active & !button3.active;
+	INVAR door1.open <-> elevator.floor = 1 & button1.active & !button3.active;
+	INVAR door2.open <-> elevator.floor = 2 & button2.active & !button3.active;
+	INVAR door3.open <-> elevator.floor = 3 & button3.active;
+\end{lstlisting}
+
+This contradicts properties 2, 3, and 6 though, because when $button3$ is constantly pressed the elevator does not serve any other floor because floor 3 is prioritized. I chose to not use this in my model because I think to the users properties 1, 2, and 3 are the most important.
+
 \section{Reflection}
 \subsection{Division of Tasks}
 Unfortunately I did not find a partner for this exercise. I wanted to ask if anybody else was looking for a partner at the most recent werkcollege on Friday, but I was the only one attending.
