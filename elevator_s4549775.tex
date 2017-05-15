@@ -136,6 +136,8 @@ This contradicts properties 2, 3, and 6 though, because when $button3$ is consta
 
 When I tried to verify property 7, NuSMV complained about that the $\bigcirc$ ("N" in NuSMV) was a syntax error but I think this should not be the case. I do not now why this does not work because it should be formalizable in LTL. I however modeled my elevator after this property so it should hold.
 
+I also verified that some specification contradicting the specifications I chose did not hold. For example $\square (button3.pressed \rightarrow \square (\lnot door3.open))$, which contradicts property 3, does not hold.
+
 \section{Reflection}
 \subsection{Division of Tasks}
 Unfortunately I did not find a partner for this exercise. I wanted to ask if anybody else was looking for a partner at the most recent werkcollege on Friday, but I was the only one attending.
