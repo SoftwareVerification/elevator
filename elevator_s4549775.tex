@@ -79,6 +79,8 @@
 \section{Report}
 It was not explicitly mentioned anywhere but I assumed that all buttons are just randomly pressed. Also it is described in the assignment that there are buttons inside and outside of the elevator, but I modeled them as a single entity. It would be trivial to have $button01$, $button02$ for floor 0 and so on, one inside the elevator and one on floor 0. This would however not not add anything to the model. If we physically built this model, we could just connect both of them to the same wire.
 
+The same is true for the lights. I only have one conceptual light for every floor but you could easily connect a second light to the same wire so all properties we proved are still true.
+
 There was a circular dependency between the doors and buttons in the model I wanted to create:
 
 \begin{lstlisting}
