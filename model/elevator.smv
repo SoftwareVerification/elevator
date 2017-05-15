@@ -135,3 +135,14 @@ MODULE main
 	-- 		door0.open | door1.open | door2.open
 	-- 	) U door3.open
 	-- )
+
+	-- If there is no request, the elevator does not move (specification 7)
+	-- LTLSPEC G (
+	-- 	!(button0.active | button1.active | button2.active | button3.active)
+	-- 	-> (
+	-- 		(elevator.floor = 0 -> N elevator.floor = 0) &
+	-- 		(elevator.floor = 1 -> N elevator.floor = 1) &
+	-- 		(elevator.floor = 2 -> N elevator.floor = 2) &
+	-- 		(elevator.floor = 3 -> N elevator.floor = 3)
+	-- 	)
+	-- )
