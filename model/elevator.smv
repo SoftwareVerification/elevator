@@ -79,6 +79,10 @@ MODULE main
 	CTLSPEC AG EF elevator.floor = 2
 	CTLSPEC AG EF elevator.floor = 3
 
+	-- The elevator always returns to floor 0 (specification 4) (I chose not to
+	-- use this.)
+	-- LTLSPEC G F elevator.floor = 0
+
 	-- The doors can be opened infinitely often
 	CTLSPEC AG EF door0.open
 	CTLSPEC AG EF door1.open
