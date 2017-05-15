@@ -74,6 +74,14 @@
 	$\square (light3.active \rightarrow \diamond door3.open)$
 	\item %7
 	If there is no request, the elevator does not move.
+
+	Because there is no concept of "movement" in the model this property is a bit difficult to formalize and we have to make a case distinction.
+
+	$\square (\lnot(button0.active \lor button1.active \lor button2.active \lor button3.active))\\ \rightarrow
+		(elevator.floor = 0 \rightarrow \bigcirc elevator.floor = 0) \land\\
+		(elevator.floor = 1 \rightarrow \bigcirc elevator.floor = 1) \land\\
+		(elevator.floor = 2 \rightarrow \bigcirc elevator.floor = 2) \land\\
+		(elevator.floor = 3 \rightarrow \bigcirc elevator.floor = 3)$
 \end{enumerate}
 
 \section{Report}
