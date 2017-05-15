@@ -140,12 +140,12 @@ MODULE main
 	-- )
 
 	-- If there is no request, the elevator does not move (specification 7)
-	-- LTLSPEC G (
-	-- 	!(button0.active | button1.active | button2.active | button3.active)
-	-- 	-> (
-	-- 		(elevator.floor = 0 -> N elevator.floor = 0) &
-	-- 		(elevator.floor = 1 -> N elevator.floor = 1) &
-	-- 		(elevator.floor = 2 -> N elevator.floor = 2) &
-	-- 		(elevator.floor = 3 -> N elevator.floor = 3)
-	-- 	)
-	-- )
+	LTLSPEC G (
+		!(button0.active | button1.active | button2.active | button3.active)
+		-> (
+			(elevator.floor = 0 -> X elevator.floor = 0) &
+			(elevator.floor = 1 -> X elevator.floor = 1) &
+			(elevator.floor = 2 -> X elevator.floor = 2) &
+			(elevator.floor = 3 -> X elevator.floor = 3)
+		)
+	)

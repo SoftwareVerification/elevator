@@ -134,8 +134,6 @@ MODULE DoorController(
 
 This contradicts properties 2, 3, and 6 though, because when $button3$ is constantly pressed the elevator does not serve any other floor because floor 3 is prioritized. I chose to not use this in my model because I think to the users properties 1, 2, and 3 are the most important.
 
-When I tried to verify property 7, NuSMV complained about that the $\bigcirc$ ("N" in NuSMV) was a syntax error but I think this should not be the case. I do not now why this does not work because it should be formalizable in LTL. I however modeled my elevator after this property so it should hold.
-
 I also verified that some specification contradicting the specifications I chose did not hold. For example $\square (button3.pressed \rightarrow \square (\lnot door3.open))$, which contradicts property 3, does not hold.
 
 \section{Reflection}
